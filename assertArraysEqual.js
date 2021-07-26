@@ -1,23 +1,24 @@
-const assertArraysEqual = function(Arr1, Arr2) {
-  
+const eqArrays = function(Arr1, Arr2) {
   if (Arr1.length === Arr2.length){
-    let matchResult = true;
+    
     for (let i = 0; i < Arr1.length; i++) {
-      if (Arr1[i] === Arr2[i]){
-        matchResult = true;
-      } else {
-        matchResult = false;
+      if (Arr1[i] !== Arr2[i]){
+        return false;
       }
     };
 
-    if (matchResult === true) {
-      console.log(`✅✅ Assertion Paased: ${Arr1} === ${Arr2}`)
-    } else {
-      console.log(`❌❌ Assertion Failed: ${Arr1} !== ${Arr2}`)
-    }
-  
+    return true;
+
   } else {
-    console.log(`❌❌ Assertion Failed: ${Arr1} !== ${Arr2}`);  
+    return false;
+  }
+}
+
+const assertArraysEqual = function(Arr1, Arr2) {
+  if (eqArrays(Arr1, Arr2) === true) {
+    console.log(`✅✅ Assertion Paased: ${Arr1} === ${Arr2}`)
+  } else {
+    console.log(`❌❌ Assertion Failed: ${Arr1} !== ${Arr2}`)
   }
 }
 
