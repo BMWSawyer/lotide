@@ -1,3 +1,27 @@
+const eqArrays = function(Arr1, Arr2) {
+  if (Arr1.length === Arr2.length){
+    
+    for (let i = 0; i < Arr1.length; i++) {
+      if (Arr1[i] !== Arr2[i]){
+        return false;
+      }
+    };
+
+    return true;
+
+  } else {
+    return false;
+  }
+}
+
+const assertArraysEqual = function(Arr1, Arr2) {
+  if (eqArrays(Arr1, Arr2) === true) {
+    console.log(`✅✅ Assertion Paased: ${Arr1} === ${Arr2}`)
+  } else {
+    console.log(`❌❌ Assertion Failed: ${Arr1} !== ${Arr2}`)
+  }
+}
+
 const flatten = function(Arr1) {
   let flattenedArray = [];
   
@@ -14,24 +38,14 @@ const flatten = function(Arr1) {
   return flattenedArray;
 }
 
-console.log(flatten([1, 2, [3, 4], 5, [6]]));
+let result1 = flatten([1, 2, [3, 4], 5, [6]])
+let result2 = flatten([1, 2, [3, 4], 5, [6]])
+let result3 = flatten([1, 2, [3, 4], 5, [6]])
 
-/*
-const assertArraysEqual = function(Arr1, Arr2) {
-  let matchResult = true;
-  
-  for (let i = 0; i < Arr1.length; i++) {
-     if (Arr1[i] === Arr2[i]) {
-        matchResult = true;
-      } else {
-        matchResult = false;
-      }
-    };
+let expectedOutput1 = [1, 2, 3, 4, 5, 6];
+let expectedOutput2 = [1, 2, 3, 4, 5, 6];
+let expectedOutput3 = [1, 2, 3, 4, 5, 6];
 
-    if (matchResult === true) {
-      console.log(`✅✅ Assertion Paased: ${Arr1} === ${Arr2}`)
-    } else {
-      console.log(`❌❌ Assertion Failed: ${Arr1} !== ${Arr2}`)
-    }
-}
-*/
+assertArraysEqual(result1, expectedOutput1);
+assertArraysEqual(result2, expectedOutput2);
+assertArraysEqual(result3, expectedOutput3);
