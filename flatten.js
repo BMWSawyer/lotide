@@ -39,12 +39,12 @@ const flatten = function(Arr1) {
 }
 
 let result1 = flatten([1, 2, [3, 4], 5, [6]])
-let result2 = flatten([1, 2, [3, 4], 5, [6]])
-let result3 = flatten([1, 2, [3, 4], 5, [6]])
+let result2 = flatten([[2, 4, 6], 8, [10, 12]])
+let result3 = flatten([1, [3, 5, 7], 9, 11])
 
 let expectedOutput1 = [1, 2, 3, 4, 5, 6];
-let expectedOutput2 = [1, 2, 3, 4, 5, 6];
-let expectedOutput3 = [1, 2, 3, 4, 5, 6];
+let expectedOutput2 = [2, 4, 6, 8, 10, 12];
+let expectedOutput3 = [1, 3, 5, 7, 9, 11];
 
 assertArraysEqual(result1, expectedOutput1);
 assertArraysEqual(result2, expectedOutput2);
