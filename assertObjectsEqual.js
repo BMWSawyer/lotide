@@ -3,23 +3,27 @@ const eqObjects = function(object1, object2) {
   const lengOfObj1 = Object.keys(object1).length;
   const lengOfObj2 = Object.keys(object2).length;
 
-  if (lengOfObj1 === lengOfObj2){
-
-    for (const item in object1) {
-      
-      if (Array.isArray(object1[item]) && Array.isArray(object2[item])) {
-        matchingObjects = eqArrays(object1[item], object2[item]);
-      } else {
-        
-        if (object1[item] === object2[item]) {
-          matchingObjects = true;
-        }
-      
-      }
-    } 
-  } else {
-    matchingObjects = false;
+  if (lengOfObj1 !== lengOfObj2){
+    return false;
   }
+  
+  for (const item in object1) {
+      
+    if (Array.isArray(object1[item]) && Array.isArray(object2[item])) {
+      matchingObjects = eqArrays(object1[item], object2[item]);
+    } else {
+        
+      if (object1[item] === object2[item]) {
+        matchingObjects = true;
+      }
+      
+    }
+    
+    if (matchingObjects === false){
+      return false;
+    }
+  
+  } 
 
   return matchingObjects;
 
