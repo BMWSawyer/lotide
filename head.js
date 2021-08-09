@@ -7,7 +7,6 @@ const assertEqual = function(actual, expected) {
   }
 };
 */
-const assertEqual = require('./assertEqual');
 
 const head = function(arr) {
   let firstElement = arr[0];
