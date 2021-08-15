@@ -1,3 +1,4 @@
+/*
 const eqArrays = function(Arr1, Arr2) {
   if (Arr1.length === Arr2.length){
     
@@ -22,7 +23,10 @@ const assertArraysEqual = function(Arr1, Arr2) {
     console.log(`❌❌ Assertion Failed: ${Arr1} !== ${Arr2}`)
   }
 }
+*/
 
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
 const takeUntil = function(array, callback) {
   
@@ -38,6 +42,7 @@ const takeUntil = function(array, callback) {
   }
 }
 
+module.exports = takeUntil;
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
